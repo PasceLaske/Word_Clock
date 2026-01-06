@@ -1,4 +1,6 @@
 # ESP32 Wortuhr mit NeoPixel LEDs
+<img width="398" height="481" alt="image" src="https://github.com/user-attachments/assets/539d47d6-6ea0-4599-90a4-51635743f03b" />
+
 
 Dies ist ein ESP32-Projekt, das eine Wortuhr steuert. Die Uhr zeigt die aktuelle Uhrzeit in Wörtern an, z. B. „Es ist fünf nach drei“, mit NeoPixel-LEDs.
 
