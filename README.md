@@ -81,3 +81,7 @@ Compatible with:
 - Brightness levels and time logic can be adjusted in the source code
 
 ---
+
+##DEMO
+
+https://youtube.com/shorts/ShPfFWpKsJU?feature=share
