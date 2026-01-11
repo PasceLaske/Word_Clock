@@ -1,49 +1,83 @@
-# ESP32 Wortuhr mit NeoPixel LEDs
+# ESP32 German Word Clock with NeoPixel LEDs
 <img width="398" height="481" alt="image" src="https://github.com/user-attachments/assets/539d47d6-6ea0-4599-90a4-51635743f03b" />
 
 
-Dies ist ein ESP32-Projekt, das eine Wortuhr steuert. Die Uhr zeigt die aktuelle Uhrzeit in Wörtern an, z. B. „Es ist fünf nach drei“, mit NeoPixel-LEDs.
+This project is an **ESP32-based German word clock (Wortuhr)** using NeoPixel (WS2812B) LEDs.
 
-Die Uhr nutzt WiFi zur Zeitsynchronisation über NTP. Außerdem kann das WLAN über ein Konfigurations-Portal (`WiFiManager`) eingerichtet werden.
+Instead of displaying numbers, the clock shows the **current time in German words**, for example:
+
+> **„ES IST FÜNF NACH DREI“**  
+> (“It is five past three”)
+
+The words are illuminated on a letter matrix using individually addressable LEDs.
+
+The clock connects to WiFi and automatically synchronizes the time via **NTP**.  
+WiFi credentials are configured through a **WiFiManager configuration portal**, so no credentials are hardcoded.
 
 ---
 
-## Funktionen
+## ✨ Features
 
-- Anzeige der Uhrzeit in **Wörtern** auf einer LED-Matrix oder LED-Kette
-- **Automatische Helligkeit**: gedimmt nachts (22:00–6:00) und hell tagsüber
-- **WLAN-Konfiguration über WiFiManager**: falls noch kein WLAN gespeichert ist
-- **Zeitsynchronisation über NTP** für genaue Uhrzeit
+- ⏰ Displays time as **German words**
+- 🌙 **Automatic brightness control**
+  - Dimmed at night (22:00 – 06:00)
+  - Bright during the day
+- 📶 **WiFi configuration via WiFiManager**
+- 🌍 **Automatic time synchronization via NTP**
+- 🔘 Optional button to reset WiFi settings
 
 ---
 
-## Hardware
+## 🧰 Hardware
 
-- **ESP32 C3**
-- **NeoPixel LEDs** (WS2812B 60 Leds/M)
-- **Button** zum Löschen der gespeicherten WLAN-Daten (optional)
+- **ESP32-C3**
+- **NeoPixel LEDs (WS2812B)** – 60 LEDs per meter
+- **Optional push button** (WiFi reset)
 
-**Anschlüsse:**
+### Pin Assignment
 
-| Komponente     | Pin     |
-|----------------|---------|
-| NeoPixel Daten | GPIO 4  |
-| Button         | GPIO 5  |
+| Component        | GPIO |
+|------------------|------|
+| NeoPixel Data    | GPIO 4 |
+| Button (optional)| GPIO 5 |
 
+---
 
+## 📦 Software & Libraries
 
-## Software / Libraries
-
-Benötigt:
+Required libraries:
 
 - [Adafruit NeoPixel](https://github.com/adafruit/Adafruit_NeoPixel)
 - [WiFiManager](https://github.com/tzapu/WiFiManager)
-- ESP32/ESP8266 Board Definitions (Arduino IDE oder PlatformIO)
-- Standard ESP32/Arduino Bibliotheken: `WiFi.h`, `time.h`, `nvs_flash.h`
 
+ESP32 / Arduino core libraries:
 
-##Setup
--Code auf Esp flashen
--Uhr einstecken und auf https://192.168.1.4 gehen
--Wlan konfigurieren
--Uhr stellt sich automatisch ein
+- `WiFi.h`
+- `time.h`
+- `nvs_flash.h`
+
+Compatible with:
+- **Arduino IDE**
+- **PlatformIO**
+
+---
+
+## 🚀 Setup
+
+1. Flash the firmware to the ESP32
+2. Power the word clock
+3. Open a browser and navigate to:  
+   **http://192.168.1.4**
+4. Configure your WiFi network
+5. The clock synchronizes the time automatically and starts displaying it in **German words**
+
+---
+
+## 📝 Notes
+
+- This is a **German word clock**  
+  (uses German time rules like *„fünf nach“*, *„viertel vor“*, *„halb“*)
+- The LED index layout must match the word matrix in the code
+- Brightness levels and time logic can be adjusted in the source code
+
+---
